@@ -27,7 +27,9 @@ SECRET_KEY = '&1uahn+t=p!z*s-8i$!_8)4c#=603@jfp8)w)@@o0)x#67t^=_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'emikarp.pythonanywhere.com',
+]
 
 
 # Application definition
