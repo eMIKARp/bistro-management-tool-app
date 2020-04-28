@@ -1,0 +1,106 @@
+.frontline_actions{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1%;
+    row-gap: 1%;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+    .frontline-action {
+        display: flex;
+        flex-direction: row;
+
+        height: 16%;
+        width: 49%;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: green;
+        color:white;
+
+        font-size: 2vh;
+    }
+
+    #rachunki_otwarte {background-color: yellowgreen}
+    #lista_dostaw{background-color: yellowgreen}
+    #status_zamowien{background-color: yellowgreen}
+    #pokaz_oferte{background-color: darkblue}
+    #pokaz_grafik{background-color: darkblue}
+    #rozpocznij_zmiane {background-color: red}
+    #raport_finansowy{background-color: darkblue}
+    #rozlicz_sie{background-color: red}
+    #koniec_zmiany {background-color: red}
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+ .frontline_actions{
+
+    display:grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 16% 16% 16% 16% 16% 16%;
+
+    grid-template-areas: "stransakcja stransakcja orachunek dowoz"
+                         "stransakcja stransakcja orachunek ldostaw"
+                         "stransakcja stransakcja rotwarte szamowien"
+                         "poferte poferte poferte rzmiane"
+                         "pgrafik pgrafik rozliczsie rzmiane"
+                         "rfinansowy zzmiane zzmiane zzmiane";
+
+     grid-row-gap: 1%;
+     height: 80vh;
+     width: 85vw;
+}
+
+     .frontline-action {
+
+        height:100%;
+         width: 100%;
+    }
+
+    #szybka_transakcja {grid-area: stransakcja;}
+    #otworz_rachunek {grid-area:orachunek;}
+    #zamowienie_na_dowoz {grid-area: dowoz;}
+    #rachunki_otwarte {grid-area:rotwarte;}
+    #lista_dostaw {grid-area:ldostaw;}
+    #status_zamowien {grid-area:szamowien;}
+    #pokaz_oferte {grid-area:poferte;}
+    #pokaz_grafik {grid-area:pgrafik;}
+    #rozpocznij_zmiane {grid-area:rzmiane;}
+    #raport_finansowy {grid-area:rfinansowy;}
+    #rozlicz_sie {grid-area: rozliczsie;}
+    #koniec_zmiany {grid-area:zzmiane;}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .frontline_actions{
+        width: 65vw;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

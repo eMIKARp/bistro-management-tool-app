@@ -1,0 +1,375 @@
+.disable-scrollbars::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.users_window_form_hidden{
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap:2px;
+    height: 90%;
+    width: 100%;
+
+    font-size: 2vh;
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.users_window_form_visible{
+
+    display: none;
+
+}
+
+.users_window_header{
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 10%;
+    width: 100%;
+    background-color:midnightblue;
+}
+
+    .header_item{
+        display:flex;
+        flex-direction: row;
+
+        justify-content: flex-start;
+        align-items: center;
+
+        padding-left: 10px;
+    }
+
+.users_window_main{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-content: center;
+
+    height: 90%;
+    width: 100%;
+
+    background-color: white;
+    color: black;
+
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+    .user_window_item{
+        display: flex;
+        flex-direction: row;
+
+        justify-content: flex-start;
+        align-items: center;
+
+        min-height: 17%;
+        width: 100%;
+
+        border-bottom: 1px grey solid;
+
+    }
+
+        .user_item {
+            display:flex;
+            flex-direction: row;
+
+            justify-content: flex-start;
+            align-items: center;
+
+            padding-left: 10px;
+
+        }
+
+
+    .usr_buttons_form_hidden{width: 14%}
+    .usr_image_form_hidden{width:25%}
+    .usr_username_form_hidden {display: none;}
+    .usr_fullname_form_hidden {width: 59%;}
+    .usr_email_form_hidden {display: none;}
+    .usr_status_form_hidden {display: none;}
+    .usr_lastlogin_form_hidden {display: none;}
+    .usr_datecreated_form_hidden {display: none;}
+
+  [id^='usr_image'] img{
+        width: 90%;
+    }
+
+
+.users_form_visible{
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap:3px;
+    height: 90%;
+    width: 100%;
+
+    font-size: 2vh;
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.user_form_hidden{
+
+    display: none;
+
+}
+    .user_form_header{
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+
+        height: 10%;
+        width: 100%;
+        background-color:midnightblue;
+    }
+
+    .user_form_main{
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-content: center;
+
+        height: 90%;
+        width: 100%;
+
+        background-color: white;
+        color:black;
+    }
+
+    .user_form_main form{
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+
+        justify-content: center;
+        align-items: center;
+
+    }
+        .form_fields_line {
+            display: flex;
+            flex-direction: row;
+            column-gap: 1%;
+            row-gap: 1%;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 5px;
+            height: 19%;
+        }
+
+        .form_field{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            height: 100%;
+        }
+
+        .form_fields_area_errors_hidden{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form_fields_area_errors_visible{
+            display: none;
+        }
+
+        .form_error_line_hidden{
+            display: none;
+        }
+
+        .form_error_line_visible{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+
+            padding: 5px;
+        }
+
+
+
+
+
+.user_menu_panel{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: 10%;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2vh;
+}
+
+    .user_menu_panel_item{
+
+        display: flex;
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: center;
+        width: 33.3%;
+        height: 100%;
+
+        color:black;
+        font-size: 2vh;
+
+        background-color: cornflowerblue;
+        color:white;
+    }
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+     .users_window_form_hidden{
+        width:70vw;
+    }
+
+     .users_window_form_visible{
+        display: none;
+    }
+
+    .users_form_visible{
+        width:70vw;
+    }
+
+    .user_form_hidden{
+        display: none;
+    }
+
+    .user_menu_panel {
+        width: 70vw;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {
+
+
+    .users_window_form_hidden{
+
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 3px;
+        width: 80vw;
+        height: 80vh;
+
+
+        font-size: 2vh;
+
+    }
+
+    .usr_buttons_form_hidden{display:flex; width: 5%;}
+    .usr_image_form_hidden{display:flex; width: 8%;}
+    .usr_username_form_hidden {display:flex; width: 10%;}
+    .usr_fullname_form_hidden {display:flex; width: 16%;}
+    .usr_email_form_hidden {display:flex;width: 22%;}
+    .usr_status_form_hidden {display:flex;width: 7%;}
+    .usr_lastlogin_form_hidden {display:flex; width: 16%;}
+    .usr_datecreated_form_hidden {display:flex; width: 16%;}
+
+
+    .usr_buttons_form_visible{display:flex; width: 8%;}
+    .usr_image_form_visible{display:flex;width: 12.8%;}
+    .usr_username_form_visible {display:flex;width: 16%;}
+    .usr_fullname_form_visible {display:flex;width: 25%;}
+    .usr_email_form_visible {display: flex;width:12%}
+    .usr_status_form_visible {display: none;}
+    .usr_lastlogin_form_visible {display: none;}
+    .usr_datecreated_form_visible {display: none;}
+
+    [id^='usr_image'] img{
+        width: 80%;
+    }
+
+    .users_window_form_visible {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        row-gap: 3px;
+        width: 50vw;
+        height: 80vh;
+
+
+        font-size: 2vh;
+    }
+
+    .user_form_hidden{
+        display:none;
+    }
+
+    .users_form_visible{
+        width: 30vw;
+        height: 80vh;
+
+    }
+
+    .user_menu_panel{
+        display: flex;
+        flex-direction: column;
+
+        width: 5vw;
+        height: 80vh;
+    }
+
+    .user_menu_panel_item{
+
+        width: 100%;
+        height: 33.3%;
+        flex-direction: column;
+
+
+    }
+
+     .user_window_item{ min-height: 17%;}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

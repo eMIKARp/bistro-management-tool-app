@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- TODO Dodac możliwość przekierowania do panelu sprzedawcy -->
+<!-- TODO Dodać funkcje wylogowywania sie z sesji -->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css"  %}>
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_admin_page.css" %}>
+
+{% endblock %}
+
+{% block title %}
+    Panel administratora
+{% endblock %}
+
+{% block body_block %}
+
+    <div class="admin_actions">
+        <button id="menu" class="admin-action"><strong>Zarządzaj menu</strong></button>
+        <button id="magazyn" class="admin-action" onclick="location.href='{% url 'BistroManagementToolApp:panel_magazynu' %}'" ><strong>Zarządzaj magazynem</strong></button>
+        <button id="zamowienia" class="admin-action"><strong>Status zamowień</strong></button>
+        <button id="koszty" class="admin-action"><strong>Zarządzaj kosztami</strong></button>
+        <button id="personel" class="admin-action" onclick="location.href='{% url 'BistroManagementToolApp:panel_zarzadzania_zespolem' %}'"><strong>Zarządzaj personelem</strong></button>
+        <button id="analityka" class="admin-action"><strong>Analityka i raporty</strong></button>
+        <button id="kamery" class="admin-action"><strong>Podgląd lokalu</strong></button>
+        <button id="koniec_pracy" class="admin-action" onclick ="location.href='{% url 'BistroManagementToolApp:logout_user' %}'"><strong>Zakończ pracę</strong></button>
+    </div>
+
+{% endblock %}
+
+{% block optional_javascript_block %}
+{% endblock %}
+
+{% block own_javascript_block %}
+{% endblock %}

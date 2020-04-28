@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css" %}>
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_transaction_page.css" %}>
+{% endblock %}
+
+{% block title %}
+    Szybka transakcja
+{% endblock %}
+
+{% block body_block %}
+    <div class="transaction_window">
+        <div class="transction_window_header">
+            <div id="header_nazwa" class="header_item">Nazwa</div>
+            <div id="header_ilosc" class="header_item">Ilość</div>
+            <div id="header_brutto" class="header_item">Brutto</div>
+            <div id="header_total" class="header_item">Wartość</div>
+        </div>
+        <div class="transction_window_main disable-scrollbars">
+
+        </div>
+        <div class="transaction_window_summary">
+            <div id="summary_label" class="summary_item">Razem:</div>
+            <div id="summary_amount" class="summary_item">0.00</div>
+        </div>
+        <div id="twf_one" class="transction_window_footer">
+            <button id="fi_anuluj" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Anuluj</strong></button>
+            <button id="fi_zakoncz" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'" ><strong>Zakończ</strong></button>
+        </div>
+    </div>
+    <div class="transaction_offer">
+        <div class="product_groups disable-scrollbars">
+            {% if product_groups %}
+                {% for group in product_groups %}
+                <button id="pg{{ group.id }}" class="group_item"><strong>{{ group.name }}</strong></button>
+                {% endfor %}
+            {% else %}
+                <p>Brak grup produktowych do wyświetlenia</p>
+            {% endif %}
+        </div>
+        <div class="product_items disable-scrollbars">
+            {% if product_items %}
+                {% for product in product_items %}
+                    <button id="{{ product.name }}" class="product_item pg{{ product.group.id}}" data-product_ext_id="{{ product.ext_id }}" data-product_name="{{ product.name }}" data-product_brutto_price="{{ product.brutto_price }}"><strong>{{ product.name }}</strong></button>
+                {% endfor %}
+            {% else %}
+                <p>Brak produktów do wyświetlenia</p>
+            {% endif %}
+        </div>
+        <div id="twf_two" class="transction_window_footer">
+            <button id="fi_anuluj" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Anuluj</strong></button>
+            <button id="fi_zakoncz" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'" ><strong>Zakończ</strong></button>
+        </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block optional_javascript_block %}
+{% endblock %}
+
+{% block own_javascript_block %}
+    <script src="../../static/js/BistroManagementToolApp/panel_transakcji_scripts.js"></script>
+{% endblock %}
+

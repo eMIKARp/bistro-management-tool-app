@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- TODO Dodać obsługe logowania w widoku telefonicznym -->
+<!-- TODO Dodać podświetlenie osoby wybranej przez użytkownika  -->
+<!-- TODO Sprawdzić czy nie loguje się administrator, jeśli tak przekierować go do panelu administratora -->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css" %}>
+{% endblock %}
+
+{% block title %}
+    Logowanie do systemu
+{% endblock %}
+
+{% block body_block %}
+    <div class="users-column">
+        <p><strong>Wybierz użytkownika:</strong></p>
+        <select class="users-list" style="font-size: 3vh">
+            <option value="" selected style="font-size: 3vh">Wybierz użytkownika</option>
+            {% for usr in application_users %}
+            <option value="{{ usr.user.username }}" style="font-size: 3vh">{{ usr.user.first_name}} {{ usr.user.last_name }}</option>
+            {% endfor %}
+        </select>
+        <div class="users-container disable-scrollbars">
+            {% for usr in application_users %}
+            <button id="u_{{ usr.user.id }}" data-username="{{ usr.user.username }}" class="user-tile">
+                <div class="user-tile-img"><img src="{{ usr.picture.url }}" alt="Zdjęcie użytkownika"></div>
+                <div class="user-tile-name">{{ usr.user.first_name}} {{ usr.user.last_name }}</div>
+            </button>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="keyboard-column">
+        <p><strong>Wprowadź PIN:</strong></p>
+        <div class="keyboard-container">
+
+                <button id="d9" class="digit">9</button>
+                <button id="d8" class="digit">8</button>
+                <button id="d7" class="digit">7</button>
+                <button id="backspace" class="digit">Del</button>
+                <button id="d6" class="digit">6</button>
+                <button id="d5" class="digit">5</button>
+                <button id="d4" class="digit">4</button>
+                <button id="clear" class="digit">Clr</button>
+                <button id="d3" class="digit">3</button>
+                <button id="d2" class="digit">2</button>
+                <button id="d1" class="digit">1</button>
+                <button id="d0" class="digit">0</button>
+                <button id="ok" class="digit">Ok</button>
+        </div>
+    </div>
+
+    <form id="login_form" action = "{% url 'BistroManagementToolApp:panel_logowania' %}" style="display: none" method="POST">
+        {% csrf_token %}
+        <input id='username_field' type="text" name="username">
+        <input id='password_field' type="password" name="password">
+        <input id='submit_button' type="submit" value="Login">
+    </form>
+
+{% endblock %}
+
+{% block optional_javascript_block %}
+{% endblock %}
+
+{% block own_javascript_block %}
+    <script src="../../static/js/BistroManagementToolApp/panel_logowania_scripts.js"></script>
+{% endblock %}
+

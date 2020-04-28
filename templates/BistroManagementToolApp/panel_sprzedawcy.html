@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<!-- TODO Dodać funkcje wylogowywania sie z sesji -->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css"  %}>
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_sales_page.css" %}>
+{% endblock %}
+
+{% block title %}
+    Panel sprzedawcy
+{% endblock %}
+
+{% block body_block %}
+    <div class="frontline_actions">
+        <button id="szybka_transakcja" class="frontline-action" onclick ="location.href='{% url 'BistroManagementToolApp:panel_transakcji' %}'"><strong>Szybka transakcja</strong></button>
+        <button id="otworz_rachunek" class="frontline-action"><strong>Otwórz rachunek</strong></button>
+        <button id="zamowienie_na_dowoz" class="frontline-action"><strong>Dowóz</strong></button>
+        <button id="rachunki_otwarte" class="frontline-action"><strong>Rachunki otwarte</strong></button>
+        <button id="lista_dostaw" class="frontline-action"><strong>Lista dostaw</strong></button>
+        <button id="status_zamowien" class="frontline-action"><strong>Status zamówień</strong></button>
+        <button id="pokaz_oferte" class="frontline-action"><strong>Pokaż ofertę</strong></button>
+        <button id="pokaz_grafik" class="frontline-action"><strong>Pokaż grafik</strong></button>
+        <button id="rozpocznij_zmiane" class="frontline-action"><strong>Rozpocznij zmianę</strong></button>
+        <button id="raport_finansowy" class="frontline-action"><strong>Raport finansowy</strong></button>
+        <button id="rozlicz_sie" class="frontline-action"><strong>Rozlicz się</strong></button>
+        <button id="koniec_zmiany" class="frontline-action" onclick ="location.href='{% url 'BistroManagementToolApp:logout_user' %}'"><strong>Zakończ zmianę</strong></button>
+    </div>
+{% endblock %}
+
+{% block optional_javascript_block %}
+{% endblock %}
+
+{% block own_javascript_block %}
+{% endblock %}
+

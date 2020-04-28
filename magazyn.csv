@@ -1,0 +1,91 @@
+S1,Artykuly spozywcze,"Maki, kasze, ryze",Kasze,Kuskus,kg,0.3,1.99,0.05,1.895238095
+S2,Artykuly spozywcze,Pozostale,Przekaski,Orzechy,kg,1,49.99,0.08,46.28703704
+S3,Artykuly spozywcze,Pozostale,Przystawki,Oliwki,kg,0.2,3.2,0.08,2.962962963
+S4,Artykuly spozywcze,Przyprawy i dodatki,Sol i pieprz,Pieprz cayanne,kg,0.2,12.99,0.23,10.56097561
+S5,Artykuly spozywcze,Przyprawy i dodatki,Sol i pieprz,Sol,kg,1,4.59,0.23,3.731707317
+S6,Artykuly spozywcze,Przyprawy i dodatki,Suszone warzywa,Czosnek suszony,kg,1,21.99,0.08,20.36111111
+S7,Artykuly spozywcze,Przyprawy i dodatki,Suszone warzywa,Pomidory suszone,kg,0.2,11.7,0.08,10.83333333
+S8,Artykuly spozywcze,Przyprawy i dodatki,Ziola,Ziola prowansalskie,kg,1,25.69,0.08,23.78703704
+S9,Artykuly spozywcze,Sosy oleje ocet,Oleje i oliwy,Oliwa,l,1,14.99,0.05,14.27619048
+S10,Artykuly spozywcze,Sosy oleje ocet,Sosy i dressingi,Sos czosnkowy,l,1,22.36,0.08,20.7037037
+S11,Artykuly spozywcze,Sosy oleje ocet,Sosy i dressingi,Sos winegret,l,1,19.95,0.08,18.47222222
+S12,Mieso wedliny kielbasy,Mieso,Drob,Kurczak,kg,1,16.99,0.05,16.18095238
+S13,Mieso wedliny kielbasy,Wedliny,Drobiowe,Szynka drobiowa,kg,0.15,4.99,0.05,4.752380952
+S14,Mleko nabial jaja,Maslo mararyny tluszcze,Maslo,Maslo,kg,0.2,5.99,0.05,5.704761905
+S15,Mleko nabial jaja,Sery,Sery biale,Feta,kg,0.27,3.49,0.05,3.323809524
+S16,Mleko nabial jaja,Sery,Sery biale,Mozzarella,kg,0.3,7.99,0.05,7.60952381
+S17,Mleko nabial jaja,Sery,Sery biale,Ser bialy,kg,0.25,2.8,0.05,2.666666667
+S18,Mleko nabial jaja,Sery,Sery kanapkowe,Serek smietankowy,kg,0.15,2.65,0.05,2.523809524
+S19,Mleko nabial jaja,Sery,Sery zolte,Ser zolty liliput,kg,0.35,6.99,0.05,6.657142857
+S20,Mleko nabial jaja,Sery,Sery zolte,Ser zolty w plastrach,kg,0.3,5.99,0.05,5.704761905
+S21,Pieczywo ciasta ciastka,Ciasta mrozone,Ciasto francuskie,Ciasto francuskie,szt,1,3.25,0.05,3.095238095
+S22,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Panini,szt,1,0.79,0.05,0.752380952
+S23,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Pieczywo zimne,szt,1,2.29,0.05,2.180952381
+S24,Pieczywo ciasta ciastka,Slodkie wypieki,Slodkie wypieki,Muffinki,szt,1,1.99,0.05,1.895238095
+S25,Ryby i owoce morza,Ryby,Wedzone,losos,kg,0.15,14.99,0.05,14.27619048
+S26,Warzywa Owoce Ziola,Owoce,Owoce swieze,Cytryny,kg,1,7.99,0.05,7.60952381
+S27,Warzywa Owoce Ziola,Owoce,Owoce swieze,Grejpfruty,kg,1,5.99,0.05,5.704761905
+S28,Warzywa Owoce Ziola,Owoce,Owoce swieze,Imbir,kg,1,14.99,0.05,14.27619048
+S29,Warzywa Owoce Ziola,Owoce,Owoce swieze,Jablka,kg,1,3.69,0.05,3.514285714
+S30,Warzywa Owoce Ziola,Owoce,Owoce swieze,Pomara?cze,kg,1,4.99,0.05,4.752380952
+S31,Warzywa Owoce Ziola,Salaty i ziola,Salaty pakowane,Mieszanka salat,kg,0.12,3.99,0.05,3.8
+S32,Warzywa Owoce Ziola,Salaty i ziola,Salaty pakowane,Szpinak swiezy ,kg,0.2,4.49,0.05,4.276190476
+S33,Warzywa Owoce Ziola,Salaty i ziola,Salaty swieze,Salata lodowa,kg,0.5,4.99,0.05,4.752380952
+S34,Warzywa Owoce Ziola,Salaty i ziola,Ziola,Bazylia,szt,1,3.99,0.05,3.8
+S35,Warzywa Owoce Ziola,Salaty i ziola,Ziola,Pietruszka natka ,szt,1,1.5,0.05,1.428571429
+S36,Warzywa Owoce Ziola,Warzywa,Warzywa mrozone,Szpinak mrozony,kg,2.5,12.6,0.05,12
+S37,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Awokado,kg,1,24.9,0.05,23.71428571
+S38,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Baklazan,kg,1,9.99,0.05,9.514285714
+S39,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Buraki,kg,1,2.5,0.05,2.380952381
+S40,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Cebula biala,kg,1,4.99,0.05,4.752380952
+S41,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Cebula czerwona,kg,1,5.99,0.05,5.704761905
+S42,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Cukinia,kg,1,9.99,0.05,9.514285714
+S43,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Marchewki,kg,1,5.58,0.05,5.314285714
+S44,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Ogorek,kg,1,12.99,0.05,12.37142857
+S45,Warzywa Owoce Ziola,Warzywa,Warzywa swieze,Pomidorki,kg,1,13.99,0.05,13.32380952
+S46,Napoje,Kawy i herbaty,Kawy,Kawa czarna Tom Cafe,kg,1,80,0.23,65.04065041
+S47,Dodatki,Opakowania,Opakowanie do salatek,Opakowanie eko,szt,1,1,0.23,0.81300813
+S48,Artykuly spozywcze,Sosy oleje ocet,Oleje i oliwy,Oleje,l,1,4,0.05,3.80952381
+S49,Warzywa Owoce Ziola,Warzywa,Warzywa mrozone,Warzywa smazone,kg,0.35,7,0.05,6.666666667
+S50,Mleko nabial jaja,Mleka i smietany,smietany,smietana 18,l,0.2,1.7,0.05,1.619047619
+S51,Mleko nabial jaja,Jaja,Jaja kurze,Jaja ekologiczne,szt,1,0.65,0.05,0.619047619
+S52,Mleko nabial jaja,Mleka i smietany,Mleka,Mleko 3.2%,l,1,2.99,0.05,2.847619048
+S53,Pieczywo ciasta ciastka,Slodkie wypieki,Slodkie wypieki,Croissant maslany,szt,1,1.07,0.23,0.869918699
+S54,Mleko nabial jaja,Mleka i smietany,Mleka,Mleko dla baristow,l,1,3,0.05,2.857142857
+S55,Mleko nabial jaja,Mleka i smietany,Mleka,Mleko owsiane,l,1,13.3,0.05,12.66666667
+S56,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z miesem,szt,1,0.44,0.05,0.419047619
+S57,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi ruskie,szt,1,0.26,0.05,0.247619048
+S58,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z kapusta i grzybami,szt,1,0.36,0.05,0.342857143
+S59,Artykuly spozywcze,Dania gotowe,Pierogi,"Pierogi z kurczakiem, szpinakiem, serem feta",szt,1,0.8,0.05,0.761904762
+S60,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi ze szpinakiem i serem ricotta,szt,1,0.44,0.05,0.419047619
+S61,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z soczewica,szt,1,0.2,0.05,0.19047619
+S62,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z lososiem i camembertem,szt,1,1,0.05,0.952380952
+S63,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z suszonymi pomidorami i serem mozzarella,szt,1,1,0.05,0.952380952
+S64,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z twarogiem,szt,1,0.34,0.05,0.323809524
+S65,Artykuly spozywcze,Dania gotowe,Pierogi,Pierogi z jagodami,szt,1,0.65,0.05,0.619047619
+S66,Napoje,Wina,Wina czerwone,Wino czerwone,l,1,17,0.23,13.82113821
+S67,Napoje,Wina,Wina biale,Wino biale,l,1,17,0.23,13.82113821
+S68,Napoje,Wina,Wina rozowe,Wino rozowe,l,1,17,0.23,13.82113821
+S69,Napoje,Piwa,Piwo beczkowe,Perla 30l,l,30,147.28,0.23,119.7398374
+S70,Napoje,Piwa,Piwa butelkowe,Piwa butelkowe,l,0.5,2.99,0.23,2.430894309
+S71,Napoje,Piwa,Piwa butelkowe,Ko?lak 330 ml,l,0.33,1.97,0.23,1.601626016
+S72,Napoje,Napoje gazowane,Slodzone,Cocal cola 200 ml,l,0.2,1.91,0.23,1.552845528
+S73,Napoje,Napoje niegazowane,Slodzone,Capi rozne rodzaje,l,0.25,1.77,0.05,1.685714286
+S74,Napoje,Napoje gazowane,Slodzone,Sprite 250 ml,l,0.25,1.77,0.23,1.43902439
+S75,Napoje,Napoje gazowane,Slodzone,Fanta 250 ml,l,0.25,1.77,0.23,1.43902439
+S76,Napoje,Napoje niegazowane,Wody,Kropla beskidu,l,0.33,1.66,0.23,1.349593496
+S77,Napoje,Napoje niegazowane,Slodzone,Fuze tea ,l,0.25,1.77,0.23,1.43902439
+S78,Napoje,Wina,Inne,Prosecco,l,0.75,20,0.23,16.2601626
+S79,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bulka fit,szt,1,0.99,0.05,0.942857143
+S80,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bulka pycha,szt,1,0.89,0.05,0.847619048
+S81,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bulka pozna?ska,szt,1,0.49,0.05,0.466666667
+S82,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bulka kajzerka,szt,1,0.29,0.05,0.276190476
+S83,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bulka poranna,szt,1,0.64,0.05,0.60952381
+S84,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Bagietka rustykalna,szt,1,2.99,0.05,2.847619048
+S85,Pieczywo ciasta ciastka,Pieczywo,Pieczywo jasne,Polbagietka,szt,1,1.19,0.05,1.133333333
+S86,Mieso wedliny kielbasy,Wedliny,Drobiowe,Wedlina drobiowa,kg,1,23.9,0.05,22.76190476
+S87,Warzywa Owoce Ziola,Salaty i ziola,Salaty pakowane,Roszponka,kg,0.1,4.99,0.05,4.752380952
+S88,Napoje,Kawy i herbaty,Herbaty,Aromatyzowana zielona,kg,1,80,0.23,65.04065041
+S89,Napoje,Kawy i herbaty,Herbaty,Herbata owocowa,kg,1,80,0.23,65.04065041
+S90,Napoje,Kawy i herbaty,Herbaty,Herbata czarna,kg,1,80,0.23,65.04065041
+S91,Artykuly spozywcze,Dania gotowe,Beszamele,Beszamel,szt,1,6,0.05,5.714285714

@@ -1,0 +1,317 @@
+.disable-scrollbars::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
+}
+
+html {
+
+    width:100vw;
+    height:100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+body{
+
+    display: flex;
+    flex-direction: column;
+
+    width:100vw;
+    height:100vh;
+
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial;
+    color: white;
+    background-color: white;
+
+    margin:0;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    color:white;
+}
+
+.header-container{
+
+    display: flex;
+    flex-direction:column;
+
+    height:5vh;
+    width: 100vw;
+
+    justify-items: center;
+    align-items: center;
+
+    border-bottom: solid white 1px;
+    background-color: black;
+
+    font-size:3vh;
+
+}
+
+    #p_date {display: none}
+
+
+.body-container {
+
+    display: flex;
+    flex-direction: column;
+
+    height: 90vh;
+    width: 100vw;
+
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+}
+
+        .users-column {
+
+            width: 100vw;
+            height: 30%;
+
+            font-size:2vh;
+            padding: 5px;
+        }
+
+        .users-list {
+            display: flex;
+            width: 100%;
+            height: 50%;
+            -webkit-appearance: none;
+            -webkit-border-radius: 0px;
+
+            background-color: yellowgreen;
+            color:white;
+        }
+        .users-container {
+            display: none;
+        }
+
+         .keyboard-column{
+             width: 100vw;
+             height: 60%;
+
+             padding: 5px;
+             position:relative;
+             bottom: 7vh;
+             font-size:2vh;
+         }
+
+        .keyboard-container{
+            display:grid;
+            grid-template-columns: 24% 24% 24% 24%;
+            grid-template-rows: 24% 24% 24% 24%;
+            grid-template-areas:"d7 d8 d9 backspace"
+                                "d4 d5 d6 clear"
+                                "d1 d2 d3 ok"
+                                "d0 d0 d0 ok";
+            grid-row-gap:1%;
+            grid-column-gap: 1%;
+            height: 100%;
+            width:100%;
+            background-color: black;
+        }
+
+            .digit{
+                display:flex;
+                background-color: dodgerblue;
+                justify-content: center;
+                align-items: center;
+                font-size: 2vh;
+            }
+
+            #d1 {grid-area:d1;}
+            #d2 {grid-area:d2;}
+            #d3 {grid-area:d3;}
+            #d4 {grid-area:d4;}
+            #d5 {grid-area:d5;}
+            #d6 {grid-area:d6;}
+            #d7 {grid-area:d7;}
+            #d8 {grid-area:d8;}
+            #d9 {grid-area:d9;}
+            #d0 {grid-area:d0;}
+            #clear {grid-area:clear;
+                background-color: red;}
+            #ok {grid-area:ok;
+                 background-color: green;}
+            #backspace {grid-area:backspace;}
+
+
+    .footer-container{
+        display: flex;
+        flex-direction: column;
+
+        height:5vh;
+        width: 100vw;
+
+        justify-items: center;
+        align-items: center;
+
+        background-color: black;
+        border-top: solid white 1px;
+
+        font-size:3vh;
+    }
+
+        #full_footer {display: none}
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .header-container{
+
+        flex-direction:row;
+
+        justify-content: space-between;
+        align-items: baseline;
+
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+
+    #p_date {display: inherit}
+
+    .users-column{
+        width: 70vw;
+    }
+
+    .keyboard-column{
+        width: 70vw;
+    }
+
+    .footer-container{
+
+        flex-direction: row;
+
+        justify-content: center;
+        align-items: baseline;
+
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+        #full_footer {display: inherit}
+        #short_footer {display: none}
+
+    .frontline_actions{
+
+        width: 85vw;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    .body-container {
+
+        flex-direction: row;
+        column-gap: 5px;
+
+        height:90vh;
+        width: 100vw;
+
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+
+    }
+        .users-column {
+
+            width: 50vw;
+            height: 60vh;
+
+        }
+
+            .users-list {display: none}
+
+            .users-container {
+
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    column-gap: 1%;
+                    row-gap:1%;
+                    height:100%;
+                    width:100%;
+
+                    overflow-y:auto;
+                    background-color: black;
+
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                }
+
+                    .user-tile{
+                        display: flex;
+                        flex-direction: row;
+                        background-color: yellowgreen;
+                        align-items: center;
+                        height: 24%;
+                        width:49%;
+                    }
+
+                        .user-tile-img{
+                            display: flex;
+                            width: 30%;
+                            height: 80%;
+                            margin-left:5px;
+                            background-color: yellowgreen;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                            .user-tile-img img{
+                                width: 90%;
+                            }
+
+                        .user-tile-name{
+                            margin-left: 10px;
+                            font-size: 2vh;
+                        }
+
+        .keyboard-column{
+             width: 35vw;
+             height: 60vh;
+             position: initial;
+         }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .users-column {
+
+            width: 40vw;
+            height: 60vh;
+
+        }
+
+    .keyboard-column{
+             width: 25vw;
+             height: 60vh;
+             position: initial;
+         }
+
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

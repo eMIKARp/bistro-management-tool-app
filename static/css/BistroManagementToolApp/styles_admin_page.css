@@ -1,0 +1,102 @@
+.admin_actions{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1%;
+    row-gap: 1%;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+    .admin-action {
+        display: flex;
+        flex-direction: row;
+
+        height: 24%;
+        width: 49%;
+
+        justify-content: center;
+        align-items: center;
+
+        background-color: green;
+        color:white;
+
+        font-size: 2vh;
+    }
+
+
+    #zamowienia {background-color: yellowgreen}
+    #koszty{background-color: yellowgreen}
+    #personel{background-color: darkblue}
+    #analityka{background-color: darkblue}
+    #kamery{background-color: red}
+    #koniec_pracy{background-color: red}
+
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+ .admin_actions{
+
+    display:grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-rows: 16% 16% 16% 16% 16% 16%;
+
+    grid-template-areas: "zmenu zmenu zmagazynem zkosztami"
+                         "zmenu zmenu zmagazynem zkosztami"
+                         "zmenu zmenu zmagazynem zzamowieniami"
+                         "zpersonelem zpersonelem zpersonelem zzamowieniami"
+                         "analityka kamery kamery koniecpracy"
+                         "analityka kamery kamery koniecpracy";
+
+     grid-row-gap: 1%;
+     height: 80vh;
+     width: 85vw;
+}
+
+     .admin-action {
+
+        height:100%;
+         width: 100%;
+    }
+
+
+
+    #menu{grid-area: zmenu;}
+    #magazyn{grid-area: zmagazynem;}
+    #zamowienia {grid-area: zzamowieniami;}
+    #koszty{grid-area: zkosztami;}
+    #personel{grid-area: zpersonelem;}
+    #analityka{grid-area: analityka;}
+    #kamery{grid-area: kamery;}
+    #koniec_pracy{grid-area: koniecpracy;}
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+    .admin_actions{
+        width: 65vw;
+    }
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<!-- TODO do każdego diva będącego ingredientem dodać ikonkę usuń i edytuj wraz z towarzyszącymi funkcjonalnościami -->
+<!-- TODO w panelu zarządania magazynem dodać funkcje umożliwją dodawanie nowych kategorii,podkategorii, segmentów -->
+<!-- TODO w panelu zarządania magazynem dodać funkcjonalność dodawania zakupów -->
+<!-- TODO do przycisku Zarządzaj menu dodać link przenoszący do Strony zarządzaj menu -->
+<!-- TODO dodać pytanie czy na pewno chcesz usunąć składnik-->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css" %}>
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_wharehouse_page.css" %}>
+{% endblock %}
+
+{% block title %}
+    Magazyn składników
+{% endblock %}
+
+{% block body_block %}
+    <div id="ingredient_window" class="users_window_form_hidden">
+        <div class="users_window_header">
+            <div id="head_buttons" class="usr_buttons_form_hidden header_item"></div>
+            <div id="head_category" class="usr_image_form_hidden header_item">Kategoria</div>
+            <div id="head_subcategory" class="usr_username_form_hidden header_item">Podkategoria</div>
+            <div id="head_aisle" class="usr_firstname_form_hidden header_item">Segment</div>
+            <div id="head_name" class="usr_lastname_form_hidden header_item">Nazwa</div>
+            <div id="head_unit" class="usr_email_form_hidden header_item">Jedn.</div>
+            <div id="head_gramature" class="usr_status_form_hidden header_item">Ilość</div>
+            <div id="head_netto" class="usr_lastlogin_form_hidden header_item">Cena netto</div>
+            <div id="head_vat" class="usr_datecreated_form_hidden header_item">VAT</div>
+            <div id="head_brutto" class="usr_salary_form_hidden header_item">Cena brutto</div>
+            <div id="head_amount" class="usr_tenure_form_hidden header_item">Zapas</div>
+        </div>
+         <div class="users_window_main disable-scrollbars">
+             {% for ing in ingredients %}
+             <div id="ingredient_{{ ing.ext_id }}" class="user_window_item">
+                <div id="ing_buttons_{{ ing.ext_id }}" class="usr_buttons_form_hidden" style="display: flex; flex-direction: column;height: 100%; justify-content: center;align-items: center;padding: 3px;row-gap: 2px">
+                    <button id='edit_ingredient_{{ ing.ext_id }}' data-ingredient_ext_id='{{ ing.ext_id }}' style='color:black;width: 90%;height: 48%;'><i class='fas fa-edit'></i></button>
+                    <button id='remove_ingredient_{{ ing.ext_id }}' data-ingredient_ext_id='{{ ing.ext_id }}' style='color:black;width: 90%;height: 48%;'><i class='fas fa-trash-alt'></i></button>
+                </div>
+                <div id='ing_category_{{ ing.ext_id }}' class="usr_image_form_hidden user_item">{{ing.category}}</div>
+                <div id='ing_subcategory_{{ ing.ext_id }}' class="usr_username_form_hidden user_item">{{ing.subcategory}}</div>
+                <div id='ing_aisle_{{ ing.ext_id }}' class="usr_firstname_form_hidden user_item">{{ ing.aisle }}</div>
+                <div id='ing_name_{{ ing.ext_id }}' class="usr_lastname_form_hidden user_item">{{ing.name}}</div>
+                <div id='ing_unit_{{ ing.ext_id }}' class="usr_email_form_hidden user_item">{{ing.unit}}</div>
+                <div id='ing_gramature_{{ ing.ext_id }}' class="usr_status_form_hidden user_item">{{ ing.grammature_per_package }}</div>
+                <div id='ing_netto_{{ ing.ext_id }}' class="usr_lastlogin_form_hidden user_item">{{ing.netto_price_per_package}}</div>
+                <div id='ing_vat_{{ ing.ext_id }}' class="usr_datecreated_form_hidden user_item">{{ing.vat_rate}}</div>
+                <div id='ing_brutto_{{ ing.ext_id }}' class="usr_salary_form_hidden user_item">{{ing.brutto_price_per_package}}</div>
+                <div id='ing_amount_{{ ing.ext_id }}' class="usr_tenure_form_hidden user_item">{{ing.amount_in_storage}}</div>
+             </div>
+             {% endfor %}
+        </div>
+    </div>
+    <div id="ingredient_form_1" class="user_form_hidden">
+        <div class="user_form_header">
+            Utwórz składnik
+        </div>
+        <div class="user_form_main">
+            <form method="POST" action="{% url 'BistroManagementToolApp:create_ingredient' %}">
+                <div id="form_fields_area" class="form_fields_area_errors_hidden">
+                    <div class="form_fields_line">
+                        <div id="ingredient_category" class="form_field" style="width:100%">
+                            {{ ingredient_form.category.label_tag }}
+                            {{ ingredient_form.category}}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div id="ingredient_subcategory" class="form_field" style="width:100%">
+                            {{ ingredient_form.subcategory.label_tag }}
+                            {{ ingredient_form.subcategory }}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div id="ingredient_aisle" class="form_field" style="width:100%">
+                            {{ ingredient_form.aisle.label_tag }}
+                            {{ ingredient_form.aisle}}
+                        </div>
+                    </div>
+                     <div class="form_fields_line">
+                        <div class="form_field" style="width:100%">
+                        {{ ingredient_form.name.label_tag }}
+                        {{ ingredient_form.name }}
+                        </div>
+                     </div>
+                     <div class="form_fields_line">
+                        <div class="form_field" style="width:25%">
+                            {{ ingredient_form.unit.label_tag }}
+                            {{ ingredient_form.unit }}
+                        </div>
+                        <div class="form_field" style="width:25%">
+                            {{ ingredient_form.grammature_per_package.label_tag }}
+                            {{ ingredient_form.grammature_per_package}}
+                        </div>
+                        <div class="form_field" style="width:25%">
+                            {{ ingredient_form.brutto_price_per_package.label_tag }}
+                            {{ ingredient_form.brutto_price_per_package}}
+                        </div>
+                        <div class="form_field" style="width:25%">
+                            {{ ingredient_form.vat_rate.label_tag }}
+                            {{ ingredient_form.vat_rate}}
+                        </div>
+                     </div>
+                </div>
+                 <div id="form_error_line" class="form_error_line_hidden">
+                       <div class="form_field" style="width: 100%;justify-content: flex-start">
+                           <p><strong>Your form has following errors:</strong></p>
+                           {% for field in addNewIngredientForm %}
+                               {% for error in field.errors %}
+                                   <p style="color:red;line-height: 0.5em">{{ field.label_tag}} {{error }}</p>
+                               {% endfor %}
+                           {% endfor %}
+                           {% for error in addNewIngredientForm.non_field_errors %}
+                               <p style="color:red">{{ error}}</p>
+                           {% endfor %}
+                       </div>
+                 </div>
+               {% csrf_token %}
+
+               <div class="form_fields_line" style="align-items: flex-end">
+                   {% if addNewIngredientForm.errors %}
+                       <input id="add_ingredient_show_errors" style="height: 50%;width: 100%" type="button" value="Pokaż błędy!">
+                   {% endif %}
+                   <input id="add_ingredient_cancel" style="height: 50%" type="button" value="Anuluj">
+                   <input id="add_ingredient" type="submit"  style="height: 50%" value="Utwórz">
+               </div>
+            </form>
+        </div>
+    </div>
+    <div id="ingredient_form_2" class="user_form_hidden">
+        <div class="user_form_header">
+            Wprowadź zakupy do systemu
+        </div>
+        <div class="user_form_main">
+
+        </div>
+    </div>
+    <div class="user_menu_panel">
+        <button id="ingredient_menu_b1" class="user_menu_panel_item"><strong>Utwórz składnik</strong></button>
+        <button id="ingredient_menu_b2" class="user_menu_panel_item"><strong>Dodaj zakupy</strong></button>
+        <button id="ingredient_menu_b3" class="user_menu_panel_item"><strong>Zarządaj menu</strong></button>
+        <button id="ingredient_menu_b4" onclick ="location.href='{% url 'BistroManagementToolApp:panel_administratora' %}'" class="user_menu_panel_item"><strong>Powrót</strong></button>
+    </div>
+{% endblock %}
+
+{% block optional_javascript_block %}
+    <script>
+        {% if show_add_ingredient_window %}
+            var show_add_ingredient_window = true;
+        {% else %}
+            var show_add_ingredient_window = false;
+        {% endif %}
+    </script>
+{% endblock %}
+
+{% block own_javascript_block %}
+    <script src="../../static/js/BistroManagementToolApp/panel_magazynu_scripts.js"></script>
+{% endblock %}
+

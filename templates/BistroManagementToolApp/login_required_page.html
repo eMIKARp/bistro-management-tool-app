@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!-- TODO Dodać obsługe logowania w widoku telefonicznym -->
+<!-- TODO Sprawdzić czy nie loguje się administrator, jeśli tak przekierować go do panelu administratora -->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css" %}>
+{% endblock %}
+
+{% block title %}
+    Logowanie do systemu
+{% endblock %}
+
+{% block body_block %}
+    <div style="display: flex;flex-direction: column;text-align: center;padding: 5px;margin-top: 50px">
+        <h3>Musisz być zalogowany, żeby otworzyć tą stronę!</h3>
+        <a href="{% url 'BistroManagementToolApp:panel_logowania' %}">Przejdź do panelu logowania</a>
+    </div>
+{% endblock %}
+
+{% block optional_javascript_block %}
+{% endblock %}
+
+{% block own_javascript_block %}
+    <script src="../../static/js/BistroManagementToolApp/panel_logowania_scripts.js"></script>
+{% endblock %}
+

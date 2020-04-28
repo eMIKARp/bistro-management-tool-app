@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<!-- TODO  Ograniczyć mozliwość ustawiania haseł do haseł składająych się wyłącznie z liczb -->
+
+{% extends "BistroManagementToolApp/base.html" %}
+
+{% load static %}
+
+{% block own_css_block %}
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_main.css" %}>
+    <link rel="stylesheet" href={% static "css/BistroManagementToolApp/styles_mange_personel_page.css" %}>
+{% endblock %}
+
+{% block title %}
+    Zarządzaj personelem
+{% endblock %}
+
+{% block body_block %}
+    <div id="users_window" class="users_window_form_hidden">
+        <div class="users_window_header">
+            <div id="head_buttons" class="usr_buttons_form_hidden header_item"></div>
+            <div id="head_image" class="usr_image_form_hidden header_item"></div>
+            <div id="head_username" class="usr_username_form_hidden header_item">Nazwa użytkownika</div>
+            <div id="head_fullname" class="usr_fullname_form_hidden header_item">Imię i nazwisko</div>
+            <div id="head_email" class="usr_email_form_hidden header_item">Adres email</div>
+            <div id="head_status" class="usr_status_form_hidden header_item">Status</div>
+            <div id="head_lastlogin" class="usr_lastlogin_form_hidden header_item">Ostatni login</div>
+            <div id="head_datecreated" class="usr_datecreated_form_hidden header_item">Data utworzenia</div>
+        </div>
+         <div class="users_window_main disable-scrollbars">
+             {% for usr in application_users %}
+                 <div id="usr_{{ usr.user.id }}" class="user_window_item">
+                    <div id="usr_buttons_{{ usr.user.id }}" class="usr_buttons_form_hidden" style="display: flex; flex-direction: column;height: 100%; justify-content: center;align-items: center;padding: 3px;row-gap: 2px">
+                        <button id="edit_user_{{ usr.user.id }}" data-user_id='{{ usr.user.id }}' style='color:black;width: 90%;height: 48%;'><i class='fas fa-edit'></i></button>
+                        <button id="remove_user_{{ usr.user.id }}" data-user_id='{{ usr.user.id }}' style='color:black;width: 90%;height: 48%;'><i class='fas fa-trash-alt'></i></button>
+                    </div>
+                    <div id="usr_image_{{ usr.user.id }}" class="usr_image_form_hidden user_item">{% if usr.picture %}<img src="{{ usr.picture.url }}">{% else %}<img src="{% static "img/BistroManagementToolApp/user-icon.png" %}">{% endif %}</div>
+                    <div id="usr_username_{{ usr.user.id }}" class="usr_username_form_hidden user_item">{{usr.user.username}}</div>
+                    <div id="usr_fullname_{{ usr.user.id }}" class="usr_fullname_form_hidden user_item">{{ usr.user.first_name }} {{ usr.user.last_name }}</div>
+                    <div id="usr_email_{{ usr.user.id }}" class="usr_email_form_hidden user_item">{{usr.user.email}}</div>
+                    <div id="usr_status_{{ usr.user.id }}" class="usr_status_form_hidden user_item">{{ usr.user.is_active }}</div>
+                    <div id="usr_lastlogin_{{ usr.user.id }}" class="usr_lastlogin_form_hidden user_item">{{usr.user.last_login}}</div>
+                    <div id="usr_datecreated_{{ usr.user.id }}" class="usr_datecreated_form_hidden user_item">{{usr.user.date_joined}}</div>
+                 </div>
+             {% endfor %}
+        </div>
+    </div>
+    <div id="user_form_1" class="user_form_hidden">
+        <div class="user_form_header">
+            Utwórz pracownika
+        </div>
+        <div class="user_form_main">
+            <form enctype="multipart/form-data" method="POST" autocomplete="off" action="{% url 'BistroManagementToolApp:create_user' %}">
+                {% csrf_token %}
+                <div id="form_fields_area" class="form_fields_area_errors_hidden">
+                    <div class="form_fields_line">
+                        <div class="form_field" style="width:100%">
+                            {{ forms.0.first_name.label_tag }}
+                            {{ forms.0.first_name}}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div class="form_field" style="width:100%">
+                            {{ forms.0.last_name.label_tag }}
+                            {{ forms.0.last_name}}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div class="form_field" style="width:100%">
+                            {{ forms.0.username.label_tag }}
+                            {{ forms.0.username}}
+                        </div>
+                        <div class="form_field" style="width:100%">
+                            {{ forms.0.password.label_tag }}
+                            {{ forms.0.password}}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div class="form_field" style="width:100%">
+                            {{ forms.0.email.label_tag }}
+                            {{ forms.0.email}}
+                        </div>
+                    </div>
+                    <div class="form_fields_line">
+                        <div class="form_field" style="width:100%;height: 100%;">
+                            {{ forms.1.picture.label_tag }}
+                            {{ forms.1.picture}}
+                        </div>
+                    </div>
+
+                </div>
+                 <div id="form_error_line" class="form_error_line_hidden">
+                       <div class="form_field" style="width: 100%;justify-content: flex-start">
+                           <p><strong>Your form has following errors:</strong></p>
+                            {% for form in forms %}
+                               {% for field in form %}
+                                   {% for error in field.errors %}
+                                       <p style="color:red;line-height: 0.5em">{{ field.label_tag}} {{error }}</p>
+                                   {% endfor %}
+                               {% endfor %}
+                               {% for error in addNewIngredientForm.non_field_errors %}
+                                   <p style="color:red">{{ error}}</p>
+                               {% endfor %}
+                           {% endfor %}
+                       </div>
+                 </div>
+                <div class="form_fields_line" style="align-items: flex-end">
+                   {% if forms.0.errors or forms.1.errors %}
+                       <input id="add_user_show_errors" style="height: 50%;width: 100%" type="button" value="Pokaż błędy!">
+                   {% endif %}
+                   <input id="add_user_cancel" style="height: 50%" type="button" value="Anuluj">
+                   <input id="add_user" type="submit"  style="height: 50%" value="Utwórz">
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="user_form_2" class="user_form_hidden">
+        <div class="user_form_header">
+            Header placeholder
+        </div>
+        <div class="user_form_main">
+
+        </div>
+    </div>
+    <div id="user_form_3" class="user_form_hidden">
+        <div class="user_form_header">
+            Edytuj pracownika
+        </div>
+        <div class="user_form_main">
+
+        </div>
+    </div>
+    <div class="user_menu_panel">
+        <button id="user_menu_b1" class="user_menu_panel_item"><strong>Nowy pracownik</strong></button>
+            <button id="user_menu_b3" class="user_menu_panel_item"><strong>Zarządzaj grafikiem</strong></button>
+        <button id="user_menu_b4" onclick ="location.href='{% url 'BistroManagementToolApp:panel_administratora' %}'" class="user_menu_panel_item"><strong>Powrót</strong></button>
+    </div>
+{% endblock %}
+
+{% block optional_javascript_block %}
+    <script>
+        {% if show_add_user_window %}
+            var show_add_user_window = true;
+        {% else %}
+            var show_add_user_window = false;
+        {% endif %}
+    </script>
+{% endblock %}
+
+{% block own_javascript_block %}
+    <script src="../../static/js/BistroManagementToolApp/panel_zarzadzania_personelem.js"></script>
+{% endblock %}
+
