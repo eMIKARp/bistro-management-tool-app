@@ -314,7 +314,7 @@ button {
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 35vh;
+        height: 45vh;
         background-color: black;
 
         font-size:3vh;
@@ -381,7 +381,7 @@ button {
         display: flex;
         flex-direction: column;
          width: 100vw;
-         height: 55vh;
+         height: 45vh;
 
          font-size:3vh;
         padding-right: 5px;
@@ -405,8 +405,8 @@ button {
                             "d0 d0 d0 ok";
         grid-row-gap:1%;
         grid-column-gap: 1%;
-        height: 100%;
-        width:100%;
+        height: 100vw;
+        width:100vw;
         background-color: black;
     }
 
