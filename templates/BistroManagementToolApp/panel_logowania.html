@@ -28,7 +28,7 @@
         <div class="users-container disable-scrollbars">
                 {% for usr in application_users %}
                 <button id="u_{{ usr.user.id }}" data-username="{{ usr.user.username }}" class="user-tile">
-                    <div class="user-tile-img"><img src="{{ usr.picture.url }}" alt="Zdjęcie użytkownika"></div>
+                    <div class="user-tile-img">{% if usr.picture %}<img src="{{ usr.picture.url }}">{% else %}<img src="{% static "img/BistroManagementToolApp/user-icon.png" %}">{% endif %}</div>
                     <div class="user-tile-name">{{ usr.user.first_name}}</div>
                 </button>
                 {% endfor %}
