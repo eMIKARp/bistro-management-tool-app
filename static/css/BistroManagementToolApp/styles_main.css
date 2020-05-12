@@ -474,6 +474,8 @@ button {
         height:79vh;
         width:50vw;
 
+        justify-content: space-between;
+        align-content: space-between;
         overflow-y:auto;
         background-color: black;
         scrollbar-width: none;
