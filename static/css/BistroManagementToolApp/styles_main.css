@@ -327,7 +327,7 @@ button {
     .users-column {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        width: 100vw;
         height: 45vh;
         background-color: black;
 
@@ -420,7 +420,7 @@ button {
         grid-row-gap:1%;
         grid-column-gap: 1%;
         height: 100%;
-        width:100%;
+        width:100vw;
         background-color: black;
     }
 
