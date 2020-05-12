@@ -413,7 +413,7 @@ button {
 
     .keyboard-container{
         display:grid;
-        grid-template-columns:  15.5% 15.5% 15.5% 49.5%;
+        grid-template-columns:  15.83% 15.83% 15.83% 49.5%;
         grid-template-rows: 24% 24% 24% 24%;
         grid-template-areas:"d7 d8 d9 backspace"
                             "d4 d5 d6 clear"
