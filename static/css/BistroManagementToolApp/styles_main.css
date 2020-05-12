@@ -369,8 +369,8 @@ button {
             flex-direction: row;
             background-color: yellowgreen;
             align-items: center;
-            height: 10vh;
-            width:49%;
+            height: 9.5vh;
+            width:50%;
         }
 
             .user-tile-img{
