@@ -52,7 +52,7 @@ button {
     border-bottom: solid white 1px;
     background-color: black;
 
-    font-size:3vh;
+    font-size:90%;
 
 }
 
@@ -94,7 +94,7 @@ button {
     background-color: black;
     border-top: solid white 1px;
 
-    font-size:3vh;
+    font-size:90%;
 }
 
     #full_footer {display: none}
@@ -317,7 +317,7 @@ button {
         height: 45vh;
         background-color: black;
 
-        font-size:3vh;
+        font-size:3vmin;
         padding-right: 5px;
         padding-left: 5px;
     }
@@ -373,7 +373,7 @@ button {
 
             .user-tile-name{
                 margin-left: 10px;
-                font-size: 3vh;
+                font-size: 3vmin;
             }
 
 
@@ -383,7 +383,7 @@ button {
          width: 100vw;
          height: 45vh;
 
-         font-size:3vh;
+         font-size:3vmin;
         padding-right: 5px;
         padding-left: 5px;
     }
@@ -488,7 +488,7 @@ button {
 
             .user-tile-name{
                 margin-left: 10px;
-                font-size: 3vh;
+                font-size: 3vmin;
             }
 
 
