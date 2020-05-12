@@ -529,7 +529,7 @@ button {
 
     .keyboard-container{
         display:grid;
-        grid-template-columns: 24% 24% 24% 24%;
+        grid-template-columns: 16.5% 16.5% 16.5% 46.5%;
         grid-template-rows: 24% 24% 24% 24%;
         grid-template-areas:"d7 d8 d9 backspace"
                             "d4 d5 d6 clear"
@@ -537,7 +537,7 @@ button {
                             "d0 d0 d0 ok";
         grid-row-gap:1%;
         grid-column-gap: 1%;
-        height: 35vw;
+        height: 100%;
         width:100%;
         background-color: black;
     }
