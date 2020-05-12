@@ -324,7 +324,7 @@ button {
         flex-direction: column;
     }
 
-        .users-column {
+    .users-column {
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -367,7 +367,7 @@ button {
             flex-direction: row;
             background-color: yellowgreen;
             align-items: center;
-            height: 19vh;
+            height: 9vh;
             width:49%;
         }
 
@@ -376,8 +376,8 @@ button {
                 background-color: yellowgreen;
                 justify-content: center;
                 align-items: center;
-                height:17vh;
-                width: 18vh;
+                height:7vh;
+                width: 8vh;
             }
 
                 .user-tile-img img{
@@ -394,10 +394,10 @@ button {
     .keyboard-column{
         display: flex;
         flex-direction: column;
-         width: 100vw;
-         height: 45vh;
+        width: 100vw;
+        height: 45vh;
 
-         font-size:3vmin;
+        font-size:3vmin;
         padding-right: 5px;
         padding-left: 5px;
     }
