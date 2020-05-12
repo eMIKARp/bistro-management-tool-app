@@ -420,7 +420,7 @@ button {
         grid-row-gap:1%;
         grid-column-gap: 1%;
         height: 100%;
-        width:100vw;
+        width:100%;
         background-color: black;
     }
 
@@ -445,7 +445,7 @@ button {
     .users-column {
         display: flex;
         flex-direction: column;
-        width: 65vw;
+        width: 50vw;
         height: 90vh;
         background-color: black;
 
@@ -512,7 +512,7 @@ button {
     .keyboard-column{
         display: flex;
         flex-direction: column;
-         width: 35vw;
+         width: 50vw;
          height: 90vh;
 
          font-size:3vh;
@@ -537,8 +537,8 @@ button {
                             "d0 d0 d0 ok";
         grid-row-gap:1%;
         grid-column-gap: 1%;
-        height: 35vw;
-        width:100vw;
+        height: 50vw;
+        width:50vw;
         background-color: black;
     }
 
