@@ -2,6 +2,12 @@
 // opcji z userem na mniejszym ekranie spowoduje
 // przypisanie wybranego usera do pola username formularza
 
+  $("#clear").click(function() {
+        document.body.requestFullscreen();
+        console.log("check");
+    })
+
+
 
 $(".users-list").change(function () {
     $('#username_field').val(($(this).val()))
