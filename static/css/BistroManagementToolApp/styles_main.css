@@ -472,7 +472,7 @@ button {
         row-gap:1%;
         column-gap:1%;
         height:79vh;
-        width:100vw;
+        width:50vw;
 
         overflow-y:auto;
         background-color: black;
