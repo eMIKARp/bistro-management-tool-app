@@ -419,8 +419,8 @@ button {
                             "d0 d0 d0 ok";
         grid-row-gap:1%;
         grid-column-gap: 1%;
-        height: 100vw;
-        width:100vw;
+        height: 40vh;
+        width:40vh;
         background-color: black;
     }
 
