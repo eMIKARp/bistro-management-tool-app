@@ -53,7 +53,7 @@
 
 }
 
-@media only screen and (max-width: 600px) and (orientation:portrait){
+@media only screen and (min-width: 600px) and (orientation:portrait){
     .frontline-action{
         font-size: 2vh;
     }
