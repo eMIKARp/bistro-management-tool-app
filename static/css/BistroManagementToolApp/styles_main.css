@@ -430,8 +430,8 @@ button {
     #full_footer {display: inherit}
     #short_footer {display: none}
 
-    .header-container{font-size: 2vh}
-    .footer-container{font-size: 2vh}
+    .header-container{font-size: 1vh}
+    .footer-container{font-size: 1vh}
 
 }
 
