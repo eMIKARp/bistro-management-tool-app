@@ -63,7 +63,10 @@ def panel_logowania(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return redirect('/bistro/panel_sprzedawcy')
+                if User.objects.get(username=username).groups.filter(name='Employee').exists():
+                    return redirect('/bistro/panel_sprzedawcy')
+                else:
+                    return redirect('/bistro/panel_administratora')
             else:
                 return HttpResponse('Account not active')
         else:

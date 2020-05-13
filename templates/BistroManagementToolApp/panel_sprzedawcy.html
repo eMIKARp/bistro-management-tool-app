@@ -27,7 +27,7 @@
         <button id="pokaz_grafik" class="frontline-action"><strong>Pokaż grafik</strong></button>
         <button id="rozpocznij_zmiane" class="frontline-action"><strong>Rozpocznij zmianę</strong></button>
         <button id="raport_finansowy" class="frontline-action"><strong>Raport finansowy</strong></button>
-        <button id="rozlicz_sie" class="frontline-action"><strong>Rozlicz się</strong></button>
+        <button id="rozlicz_sie" class="frontline-action" onclick ="location.href='{% url 'BistroManagementToolApp:panel_administratora' %}'"><strong>Panel właściciela</strong></button>
         <button id="koniec_zmiany" class="frontline-action" onclick ="location.href='{% url 'BistroManagementToolApp:logout_user' %}'"><strong>Zakończ zmianę</strong></button>
     </div>
 {% endblock %}

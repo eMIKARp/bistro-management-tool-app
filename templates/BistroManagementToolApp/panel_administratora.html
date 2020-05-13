@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 
-<!-- TODO Dodac możliwość przekierowania do panelu sprzedawcy -->
-<!-- TODO Dodać funkcje wylogowywania sie z sesji -->
-
 {% extends "BistroManagementToolApp/base.html" %}
 
 {% load static %}
@@ -27,7 +24,7 @@
         <button id="koszty" class="admin-action"><strong>Zarządzaj kosztami</strong></button>
         <button id="personel" class="admin-action" onclick="location.href='{% url 'BistroManagementToolApp:panel_zarzadzania_zespolem' %}'"><strong>Zarządzaj personelem</strong></button>
         <button id="analityka" class="admin-action"><strong>Analityka i raporty</strong></button>
-        <button id="kamery" class="admin-action"><strong>Podgląd lokalu</strong></button>
+        <button id="kamery" class="admin-action" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Panel sprzedawcy</strong></button>
         <button id="koniec_pracy" class="admin-action" onclick ="location.href='{% url 'BistroManagementToolApp:logout_user' %}'"><strong>Zakończ pracę</strong></button>
     </div>
 
