@@ -48,33 +48,31 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-}
+     .frontline_actions{
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+        display:grid;
+        grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
+        grid-template-rows: 16% 16% 16% 16% 16% 16%;
 
- .frontline_actions{
+        grid-template-areas: "stransakcja stransakcja orachunek dowoz"
+                             "stransakcja stransakcja orachunek ldostaw"
+                             "stransakcja stransakcja rotwarte szamowien"
+                             "poferte poferte poferte rzmiane"
+                             "pgrafik pgrafik rozliczsie rzmiane"
+                             "rfinansowy zzmiane zzmiane zzmiane";
 
-    display:grid;
-    grid-template-columns: 24% 24% 24% 24%;
-    grid-template-rows: 16% 16% 16% 16% 16% 16%;
+         height: 90vh;
+         width: 100%;
+         padding: 5px;
 
-    grid-template-areas: "stransakcja stransakcja orachunek dowoz"
-                         "stransakcja stransakcja orachunek ldostaw"
-                         "stransakcja stransakcja rotwarte szamowien"
-                         "poferte poferte poferte rzmiane"
-                         "pgrafik pgrafik rozliczsie rzmiane"
-                         "rfinansowy zzmiane zzmiane zzmiane";
-
-     grid-row-gap: 1%;
-     height: 80vh;
-     width: 85vw;
-}
+         align-content: center;
+         justify-content: center;
+     }
 
      .frontline-action {
 
         height:100%;
-         width: 100%;
+        width: 100%;
     }
 
     #szybka_transakcja {grid-area: stransakcja;}
@@ -92,13 +90,12 @@
 
 }
 
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
-    .frontline_actions{
-        width: 65vw;
-    }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
