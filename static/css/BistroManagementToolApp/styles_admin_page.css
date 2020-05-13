@@ -26,7 +26,7 @@
         background-color: green;
         color:white;
 
-        font-size: 2vh;
+        font-size: 3vh;
     }
 
 
@@ -43,18 +43,20 @@
 
 }
 
+@media only screen and (min-width: 600px) and (orientation:portrait){
+   .admin-action {
+        font-size: 2vh;
+    }
+}
+
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
 
  .admin_actions{
 
     display:grid;
-    grid-template-columns: 24% 24% 24% 24%;
+    grid-template-columns: 24.5% 24.5% 24.5% 24.5%;
     grid-template-rows: 16% 16% 16% 16% 16% 16%;
 
     grid-template-areas: "zmenu zmenu zmagazynem zkosztami"
@@ -64,9 +66,13 @@
                          "analityka kamery kamery koniecpracy"
                          "analityka kamery kamery koniecpracy";
 
-     grid-row-gap: 1%;
-     height: 80vh;
-     width: 85vw;
+     height: 90vh;
+     width: 100%;
+
+    padding: 5px;
+
+      align-content: center;
+     justify-content: center;
 }
 
      .admin-action {
@@ -86,15 +92,16 @@
     #kamery{grid-area: kamery;}
     #koniec_pracy{grid-area: koniecpracy;}
 
+
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
-    .admin_actions{
-        width: 65vw;
-    }
-
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */

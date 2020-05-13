@@ -1,7 +1,5 @@
 .frontline_actions{
 
-    /*ldskjf*/
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -43,13 +41,7 @@
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) and (orientation:landscape){
-
-    .frontline-action {
-        height: 24%;
-        width: 32%;
-    }
-
+@media only screen and (max-width: 600px) {
 
 }
 
@@ -78,6 +70,7 @@
          height: 90vh;
          width: 100%;
          padding: 5px;
+
 
          align-content: center;
          justify-content: center;
