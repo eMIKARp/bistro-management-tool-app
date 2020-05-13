@@ -30,15 +30,15 @@
         font-size: 3vh;
     }
 
-    #rachunki_otwarte {background-color: yellowgreen}
-    #lista_dostaw{background-color: yellowgreen}
-    #status_zamowien{background-color: yellowgreen}
-    #pokaz_oferte{background-color: darkblue}
-    #pokaz_grafik{background-color: darkblue}
-    #rozpocznij_zmiane {background-color: red}
-    #raport_finansowy{background-color: darkblue}
-    #rozlicz_sie{background-color: red}
-    #koniec_zmiany {background-color: red}
+#rachunki_otwarte {background-color: yellowgreen}
+#lista_dostaw{background-color: yellowgreen}
+#status_zamowien{background-color: yellowgreen}
+#pokaz_oferte{background-color: darkblue}
+#pokaz_grafik{background-color: darkblue}
+#rozpocznij_zmiane {background-color: red}
+#raport_finansowy{background-color: darkblue}
+#rozlicz_sie{background-color: red}
+#koniec_zmiany {background-color: red}
 
 
 
@@ -53,6 +53,11 @@
 
 }
 
+@media only screen and (max-width: 600px) and (orientation:portrait){
+    .frontline-action{
+        font-size: 2vh;
+    }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
