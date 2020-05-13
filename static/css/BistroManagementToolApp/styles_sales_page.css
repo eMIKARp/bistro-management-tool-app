@@ -1,3 +1,6 @@
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) and (orientation:portrait){
+
 .frontline_actions{
 
     display: flex;
@@ -26,7 +29,7 @@
         background-color: green;
         color:white;
 
-        font-size: 3vh;
+        font-size: 2vh;
     }
 
     #rachunki_otwarte {background-color: yellowgreen}
@@ -39,11 +42,18 @@
     #rozlicz_sie{background-color: red}
     #koniec_zmiany {background-color: red}
 
+}
 
- /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) and (orientation:landscape){
+
+    .frontline-action {
+        width: 33%;
+    }
+
 
 }
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
