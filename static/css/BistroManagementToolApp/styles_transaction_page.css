@@ -259,16 +259,15 @@
 
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 600px) and (orientation:portrait){
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (orientation: landscape){
 
     #header_nazwa{width: 61%}
     #header_ilosc{width:13%}
@@ -297,6 +296,11 @@
     .product_groups{height: 100%}
     .product_items{height: 100%}
 
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px){
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
