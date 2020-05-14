@@ -46,9 +46,9 @@ $(".product_item").click(
         } else {
             $(".transction_window_main").append("" +
                 "<div id='" + $(this).data('product_ext_id') + "' class='transaction_item'>" +
-                    "<div style='display: flex;flex-direction: column;justify-content:center;align-items:center;padding: 3px'>" +
-                        "<button id='remove_unit' style='color:black'><i class='fas fa-minus'></i></button>"+
-                        "<button id='remove_product' style='color:black'><i class='fas fa-trash-alt'></i></button>" +
+                    "<div style='display: flex;flex-direction: column;justify-content:center;align-items:center;padding: 0px'>" +
+                        "<button id='remove_unit' style='color:white;height: 50%;background-color:DarkOliveGreen'><i class='fas fa-minus'></i></button>"+
+                        "<button id='remove_product' style='color:white;height: 50%;background-color:DarkOliveGreen'><i class='fas fa-trash-alt'></i></button>" +
                     "</div>"+
                     "<p id='nazwa'>" + $(this).data('product_name') + "</p>" +
                     "<p id='ilosc'>1</p>" +
