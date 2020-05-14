@@ -44,15 +44,16 @@ $(".product_item").click(
         // else add product to the transaction list
 
         } else {
-            $(".transction_window_main").append("<div id='" + $(this).data('product_ext_id') + "' class='transaction_item'>" +
-
-                "<div style='display: flex;flex-direction: column;justify-content:center;align-items:center;padding: 3px'><button id='remove_unit' style='color:black'><i class='fas fa-minus'></i></button>"+
-                "<button id='remove_product' style='color:black'><i class='fas fa-trash-alt'></i></button></div>"+
-
-                "<p id='nazwa'>" + $(this).data('product_name') + "</p>" +
-                "<p id='ilosc'>1</p>" +
-                "<p id='cena_brutto'>" + $(this).data("product_brutto_price") + "</p>" +
-                "<p id='total_value'>" + $(this).data("product_brutto_price") + "</p>" +
+            $(".transction_window_main").append("" +
+                "<div id='" + $(this).data('product_ext_id') + "' class='transaction_item'>" +
+                    "<div style='display: flex;flex-direction: column;justify-content:center;align-items:center;padding: 3px'>" +
+                        "<button id='remove_unit' style='color:black'><i class='fas fa-minus'></i></button>"+
+                        "<button id='remove_product' style='color:black'><i class='fas fa-trash-alt'></i></button>" +
+                    "</div>"+
+                    "<p id='nazwa'>" + $(this).data('product_name') + "</p>" +
+                    "<p id='ilosc'>1</p>" +
+                    "<p id='cena_brutto'>" + $(this).data("product_brutto_price") + "</p>" +
+                    "<p id='total_value'>" + $(this).data("product_brutto_price") + "</p>" +
                 "</div>")
             var total_value = parseFloat($(this).data("product_brutto_price"))
         }

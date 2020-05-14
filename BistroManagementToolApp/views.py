@@ -11,6 +11,7 @@ from django.http.response import HttpResponseRedirect
 
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import authenticate,login,logout
 
 # Widoki powiązane z poszczególnymi template'ami
@@ -18,6 +19,7 @@ from django.contrib.auth import authenticate,login,logout
 # Widok odpowiedzalny za obsługę panelu administratora
 
 @login_required
+@user_passes_test(lambda u: u.groups.filter(name='Owner').exists(),login_url='/bistro/brak_uprawnien')
 def panel_administratora(request):
     my_dict = {}
     return render(request, 'BistroManagementToolApp/panel_administratora.html',context=my_dict)
@@ -39,6 +41,13 @@ def panel_zarzadzania_zespolem(request):
 def logout_user(request):
     logout(request)
     return redirect('/bistro/panel_logowania')
+
+# Strona wyświetlana użytkownikom, którzy nie mają upranień do odwiedzenia
+# danej strony
+
+@login_required
+def brak_uprawnien(request):
+    return render(request, 'BistroManagementToolApp/brak_uprawnien.html')
 
 # Strona wyświetlana użytkownikom, którzy nie są zalogowani
 

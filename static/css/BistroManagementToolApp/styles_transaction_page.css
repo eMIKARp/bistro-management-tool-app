@@ -7,13 +7,11 @@
     justify-content: center;
     align-items: center;
 
-    row-gap:1%;
-    height: 50%;
-    width: 100%;
+    row-gap: 0.2vh;
+    height: 45vh;
+    width: 100vw;
 
     font-size: 2vh;
-
-    margin-bottom: 1%;
 
 }
 
@@ -25,8 +23,8 @@
     justify-content: center;
     align-items: center;
 
-    height: 10%;
-    width: 100%;
+    height: 5vh;
+    width: 100vw;
     padding-right: 5px;
     background-color:midnightblue;
 }
@@ -54,8 +52,8 @@
     justify-content: flex-start;
     align-content: flex-start;
 
-    height: 80%;
-    width: 100%;
+    height: 35vh;
+    width: 100vw;
 
     overflow-y: scroll;
     background-color: white;
@@ -69,8 +67,8 @@
         display: flex;
         flex-direction: row;
 
-        width: 100%;
-        min-height: 33.33%;
+        width: 100vw;
+        min-height: 11.66vh;
 
         border-bottom: 1px grey solid;
 
@@ -79,6 +77,7 @@
         .transaction_item p{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
 
@@ -87,7 +86,7 @@
         }
 
 
-    #nazwa{width: 60%;justify-content: flex-start;padding-left: 5px}
+    #nazwa{width: 60%; justify-content: flex-start;padding-left: 5px}
     #ilosc{width:20%}
     #cena_brutto {
         width: 0%;
@@ -106,8 +105,8 @@
     background-color: white;
     color:black;
 
-    height: 10%;
-    width: 100%;
+    height: 5vh;
+    width: 100vw;
 }
 
     #summary_label {
@@ -130,13 +129,13 @@
     display: flex;
     flex-direction: row;
 
-    column-gap: 1%;
+    column-gap: 0.2vw;
 
     justify-content: center;
     align-items: center;
 
-    height: 10%;
-    width: 100%;
+    height: 5vh;
+    width: 100vw;
 
     font-size: 2vh;
 }
@@ -164,14 +163,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 1%;
-    row-gap: 1%;
+    column-gap: 0.2vw;
+    row-gap: 0.2vh;
 
     justify-content: center;
     align-items: center;
 
-    height: 50%;
-    width: 100%;
+    height: 45vh;
+    width: 100vw;
 
 }
 
@@ -180,14 +179,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 1%;
-    row-gap: 1%;
+    column-gap: 0.2vw;
+    row-gap: 0.2vh;
 
     justify-content: center;
     align-items: center;
 
-    height: 89%;
-    width: 35%;
+    height: 45vh;
+    width: 39.8vw;
 
     overflow-y: scroll;
     direction: rtl;
@@ -201,7 +200,7 @@
         display: flex;
         flex-direction: row;
 
-        height: 16%;
+        height: 7.4vh;
         width: 100%;
 
         justify-content: center;
@@ -218,15 +217,15 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    column-gap: 1%;
-    row-gap: 1%;
+    column-gap: 0.2vw;
+    row-gap: 0.2vh;
 
     justify-content: center;
     align-content: flex-start;
 
 
-    height: 89%;
-    width: 64%;
+    height: 45vh;
+    width: 60vw;
 
     overflow-y: scroll;
     overflow-x: scroll;
@@ -241,8 +240,8 @@
         display: flex;
         flex-direction: row;
 
-        height: 16%;
-        width: 100%;
+        height: 15vh;
+        width: 60vw;
 
         align-items: center;
         text-align: left ;
@@ -264,32 +263,10 @@
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 
-     .transaction_window{
-        width:70vw;
-    }
-
-    .transaction_offer{
-        width:70vw;
-    }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
-    .transaction_window{
-        width:35vw;
-        height:80vh;
-
-        padding:0%;
-
-    }
-
-    .transaction_offer{
-        width:50vw;
-        height:80vh;
-
-    }
 
     #header_nazwa{width: 61%}
     #header_ilosc{width:13%}
@@ -312,8 +289,6 @@
         min-height: 15%;
 
     }
-
-    .transaction_window{margin-bottom: 0;}
 
     #twf_one{display: flex}
     #twf_two{display: none}

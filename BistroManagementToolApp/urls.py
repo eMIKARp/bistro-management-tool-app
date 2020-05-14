@@ -10,6 +10,7 @@ urlpatterns = [
 
     url(r'^panel_logowania',views.panel_logowania,name='panel_logowania'),
     url(r'^login_required_page',views.login_required_page,name='login_required_page'),
+    url(r'^brak_uprawnien',views.brak_uprawnien,name='brak_uprawnien'),
     url(r'^wrong_credentials_page',views.wrong_credentials_page,name='wrong_credentials_page'),
     url(r'^panel_zarzadzania_zespolem',views.panel_zarzadzania_zespolem,name='panel_zarzadzania_zespolem'),
     url(r'^panel_sprzedawcy',views.panel_sprzedawcy,name='panel_sprzedawcy'),
