@@ -10,7 +10,7 @@ function calculate_total_transaction_value(){
     $(".transaction_item").each(function () {
     total_transaction_value = total_transaction_value + parseFloat($(this).find('p[id="total_value"]').text())
     })
-    $('div[id="summary_amount"]').text(total_transaction_value)
+    $('div[id="summary_amount"]').text(total_transaction_value+" PLN")
 }
 
 // Display products from product group
@@ -44,7 +44,7 @@ $(".product_item").click(
         // else add product to the transaction list
 
         } else {
-            $(".transction_window_main").append("" +
+            $(".transction_window_main").prepend("" +
                 "<div id='" + $(this).data('product_ext_id') + "' class='transaction_item'>" +
                     "<div id='buttons'>" +
                         "<button id='remove_unit' style='color:white;height: 50%;width:100%; background-color:DarkOliveGreen'><i class='fas fa-minus'></i></button>"+
