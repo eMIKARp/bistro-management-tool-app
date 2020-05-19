@@ -424,6 +424,7 @@ button {
         height: 40vh;
         width:100vw;
         background-color: black;
+
     }
 
 
@@ -535,7 +536,7 @@ button {
     .keyboard-container{
         display:grid;
         grid-template-columns: 24% 24% 24% 24%;
-        grid-template-rows: 24% 24% 24% 24%;
+        grid-template-rows: 24.2% 24.2% 24.2% 24.2%;
         grid-template-areas:"d7 d8 d9 backspace"
                             "d4 d5 d6 clear"
                             "d1 d2 d3 ok"

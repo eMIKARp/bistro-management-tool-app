@@ -47,8 +47,8 @@ $(".product_item").click(
             $(".transction_window_main").prepend("" +
                 "<div id='" + $(this).data('product_ext_id') + "' class='transaction_item'>" +
                     "<div id='buttons'>" +
-                        "<button id='remove_unit' style='color:white;height: 50%;width:100%; background-color:DarkOliveGreen'><i class='fas fa-minus'></i></button>"+
-                        "<button id='remove_product' style='color:white;height: 50%;width:100%;background-color:DarkOliveGreen'><i class='fas fa-trash-alt'></i></button>" +
+                        "<button id='remove_unit' style='color:white;height: 50%; width:100%; background-color:DarkOliveGreen'><i class='fas fa-minus'></i></button>"+
+                        "<button id='remove_product' style='color:white;height: 50%; width:100%;background-color:DarkOliveGreen'><i class='fas fa-trash-alt'></i></button>" +
                     "</div>"+
                     "<p id='nazwa'>" + $(this).data('product_name') + "</p>" +
                     "<p id='ilosc'>1</p>" +

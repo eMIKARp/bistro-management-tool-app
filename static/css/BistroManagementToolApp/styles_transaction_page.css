@@ -1,4 +1,3 @@
-
 .transaction_window{
 
     display: flex;
@@ -87,7 +86,7 @@
 
         }
 
-    #buttons{width: 10%;}
+    #buttons{width: 5.8vh;}
     #nazwa{width: 50%; justify-content: flex-start;padding-left: 15px}
     #ilosc{width:20%}
     #cena_brutto {
@@ -142,9 +141,6 @@
 
     font-size: 2vh;
 }
-    #twf_one{display: none}
-    #twf_two{display: flex}
-
     .footer_item{
         display: flex;
         flex-direction: row;
@@ -227,7 +223,7 @@
 
 
     height: 40vh;
-    width: 60vw;
+    width: 59.8vw;
 
     overflow-y: scroll;
     overflow-x: scroll;
@@ -243,7 +239,7 @@
         flex-direction: row;
 
         height: 10vh;
-        width: 60vw;
+        width: 100%;
 
         align-items: center;
         text-align: left ;
@@ -257,17 +253,40 @@
     }
 
 
- /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 600px) and (orientation:portrait){
-}
-
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) and (orientation: landscape){
+@media (orientation: landscape){
+    .transaction_window{
+        height: 90vh;
+        width: 50vw;
+    }
+
+    .transction_window_header{
+        width: 50vw;
+    }
+
+    .transction_window_main{
+        width: 50vw;
+        height: 80vh;
+    }
+    .transaction_window_summary{
+        width: 50vw;
+    }
+
+    .transaction_offer{
+        height: 90vh;
+        width: 50vw;
+    }
+
+    .product_groups{
+        width: 19.8vw;
+        height: 85vh;
+    }
+
+    .product_items{
+        width: 29.8vw;
+        height: 85vh;
+    }
 
     #header_nazwa{width: 61%}
     #header_ilosc{width:13%}
@@ -277,7 +296,8 @@
     }
     #header_total{width: 13%}
 
-    #nazwa{width: 61%}
+    #buttons{width: 5.8vh}
+    #nazwa{width: 51%}
     #ilosc{width:13%}
     #cena_brutto {
         width: 13%;
@@ -285,29 +305,18 @@
     }
     #total_value{width: 13%}
 
-    .transaction_item{
-
-        min-height: 15%;
-
-    }
-
-    #twf_one{display: flex}
-    #twf_two{display: none}
-    .product_groups{height: 100%}
-    .product_items{height: 100%}
-
 }
 
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px){
-}
+/*!* Medium devices (landscape tablets, 768px and up) *!*/
+/*@media only screen and (min-width: 768px){*/
+/*}*/
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+/*!* Large devices (laptops/desktops, 992px and up) *!*/
+/*@media only screen and (min-width: 992px) {*/
 
-}
+/*}*/
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-}
+/*!* Extra large devices (large laptops and desktops, 1200px and up) *!*/
+/*@media only screen and (min-width: 1200px) {*/
+/*}*/
