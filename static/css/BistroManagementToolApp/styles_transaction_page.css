@@ -37,7 +37,8 @@
         align-items: center;
     }
 
-    #header_nazwa{width: 60%;}
+    #header_buttons{width:5.8vh}
+    #header_nazwa{width: 55%;}
     #header_ilosc{width:20%}
     #header_brutto {
         width: 0%;
@@ -87,7 +88,7 @@
         }
 
     #buttons{width: 5.8vh;}
-    #nazwa{width: 50%; justify-content: flex-start;padding-left: 15px}
+    #nazwa{width: 55%; justify-content: flex-start;padding-left: 15px}
     #ilosc{width:20%}
     #cena_brutto {
         width: 0%;
@@ -269,6 +270,10 @@
         width: 50vw;
         height: 80vh;
     }
+
+     .transaction_item {
+         width: 50vw;
+     }
     .transaction_window_summary{
         width: 50vw;
     }
@@ -288,22 +293,25 @@
         height: 85vh;
     }
 
-    #header_nazwa{width: 61%}
-    #header_ilosc{width:13%}
+    #header_buttons{width: 5.8vh}
+    #header_nazwa{width: 55%}
+    #header_ilosc{width:13%;justify-content:  center;}
     #header_brutto {
         width: 13%;
         display:flex;
+        justify-content:  center;
     }
-    #header_total{width: 13%}
+    #header_total{width: 13%;justify-content: center;}
 
     #buttons{width: 5.8vh}
-    #nazwa{width: 51%}
-    #ilosc{width:13%}
+    #nazwa{width: 55%; justify-content: flex-start;padding-left: 15px}
+    #ilosc{width:13%;justify-content:  center;}
     #cena_brutto {
         width: 13%;
         display:flex;
+        justify-content:  center;
     }
-    #total_value{width: 13%}
+    #total_value{width: 13%;justify-content:  center;}
 
 }
 
