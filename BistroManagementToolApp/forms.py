@@ -3,6 +3,15 @@ from django import forms
 from django.contrib.auth.models import User
 from BistroManagementToolApp.models import *
 
+class TransactionForm(forms.ModelForm):
+    class Meta():
+        model = Transaction
+        fields = '__all__'
+
+class ProductsInTransactionForm(forms.ModelForm):
+    class Meta():
+        model = ProductsInTransaction
+        fields = '__all__'
 
 class UserForm(forms.ModelForm):
 

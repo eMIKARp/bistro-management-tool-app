@@ -37,7 +37,6 @@
         align-items: center;
     }
 
-    /*sdfds;lkjs*/
     #header_buttons{width:5.8vh}
     #header_nazwa{width: 55%;}
     #header_ilosc{width:20%}
@@ -135,7 +134,7 @@
 
     column-gap: 0.2vw;
 
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 
     height: 5vh;
@@ -154,12 +153,36 @@
         background-color: DarkOliveGreen;
     }
 
-        #fi_anuluj{width: 29.9%}
-        #fi_zakoncz{width: 29.8%}
+        #fi_zakończ{width: 33.1%}
+        #fi_zapisz{width: 33.1%}
+        #fi_lista_transakcji{width: 33.1%}
 
 
+.transaction_list_hidden {
+    display: none;
+}
 
-.transaction_offer{
+.transaction_list_visible{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 0.2vw;
+    row-gap: 0.2vh;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 45vh;
+    width: 100vw;
+
+}
+
+.transaction_offer_hidden{
+    display: none;
+}
+
+.transaction_offer_visible{
 
     display: flex;
     flex-direction: row;
@@ -279,7 +302,12 @@
         width: 50vw;
     }
 
-    .transaction_offer{
+    .transaction_offer_visible{
+        height: 90vh;
+        width: 50vw;
+    }
+
+    .transaction_list_visible{
         height: 90vh;
         width: 50vw;
     }

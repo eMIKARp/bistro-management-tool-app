@@ -25,7 +25,8 @@ urlpatterns = [
     url(r'^ajax/create_user',views.create_user,name="create_user"),
     url(r'^ajax/delete_user',views.delete_user,name="delete_user"),
     url(r'^ajax/edit_user',views.edit_user,name="edit_user"),
-    url(r'^logout_user',views.logout_user,name="logout_user")
+    url(r'^logout_user',views.logout_user,name="logout_user"),
+    url(r'^test',views.test_env,name="test_env")
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

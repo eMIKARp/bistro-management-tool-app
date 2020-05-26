@@ -14,6 +14,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth import authenticate,login,logout
 
+from django.forms import formset_factory
+
 # Widoki powiązane z poszczególnymi template'ami
 
 # Widok odpowiedzalny za obsługę panelu administratora
@@ -85,7 +87,7 @@ def panel_logowania(request):
         my_dict = {'application_users':application_users}
         return render(request, 'BistroManagementToolApp/panel_logowania.html', context=my_dict)
 
-# Widok odpowiedzialny za obsługę panelu sprzedawcy
+# Widok odpowiedzialny za    obsługę panelu sprzedawcy
 
 @login_required
 def panel_sprzedawcy(request):
@@ -98,11 +100,49 @@ def panel_sprzedawcy(request):
 @login_required
 def panel_transakcji(request):
 
-    product_groups = ProductGroup.objects.all()
-    product_items = Product.objects.all()
+    # Tworzymy zespół formularzy do umieszczenia na stronie
 
-    my_dict = {'product_groups':product_groups,'product_items':product_items}
-    return render(request, 'BistroManagementToolApp/panel_transakcji.html', context=my_dict)
+    ProductsInTransactionFormset = formset_factory(ProductsInTransactionForm)
+
+    if request.method == 'POST':
+        products_in_transaction_formset = ProductsInTransactionFormset(request.POST)
+        if products_in_transaction_formset.is_valid():
+            if len(products_in_transaction_formset.forms) > 1:
+                new_transaction = TransactionForm().save(commit=False)
+                new_transaction.date_created = datetime.now()
+                new_transaction.sales_person = ApplicationUser.objects.get(user=request.user)
+                for f in products_in_transaction_formset[1:]:
+                    new_transaction.number_of_products_in_transaction += float(f.cleaned_data['quantity'])
+                    new_transaction.netto_transaction_value += float(Product.objects.get(name=f.cleaned_data['product']).netto_price * f.cleaned_data['quantity'])
+                    new_transaction.vat_due_in_transaction += float(Product.objects.get(name=f.cleaned_data['product']).vat_paid * f.cleaned_data['quantity'])
+                    new_transaction.brutto_transaction_value += float(Product.objects.get(name=f.cleaned_data['product']).brutto_price * f.cleaned_data['quantity'])
+                new_transaction.save()
+                for f in products_in_transaction_formset[1:]:
+                    f = f.save(commit=False)
+                    f.transaction = new_transaction
+                    f.save()
+
+            products_in_transaction_formset = ProductsInTransactionFormset()
+            transactions = Transaction.objects.all()
+            product_groups = ProductGroup.objects.all()
+            product_items = Product.objects.all()
+            my_dict = {'transactions': transactions, 'product_groups': product_groups, 'product_items': product_items,
+                       'form_set': products_in_transaction_formset}
+            return render(request, 'BistroManagementToolApp/panel_transakcji.html', context=my_dict)
+
+        else:
+            print(products_in_transaction_formset.errors)
+            return render(request, 'BistroManagementToolApp/panel_sprzedawcy.html')
+    else:
+            # Tworzymy instancje zestawu formularzy,którą wstrzykniemy na strone
+            # poprzez słownik
+
+        products_in_transaction_formset = ProductsInTransactionFormset()
+        transactions = Transaction.objects.all()
+        product_groups = ProductGroup.objects.all()
+        product_items = Product.objects.all()
+        my_dict = {'transactions':transactions,'product_groups':product_groups,'product_items':product_items,'form_set':products_in_transaction_formset}
+        return render(request, 'BistroManagementToolApp/panel_transakcji.html', context=my_dict)
 
 # Widok odpowiedzialny za obsługę panelu magazynu
 
@@ -245,3 +285,10 @@ def delete_ingredient(request):
         'status':'Ingredient deleted!'
     }
     return JsonResponse(data)
+
+
+def test_env(request):
+    forms = [TransactionForm(),ProductsInTransactionForm()]
+    my_dict = {'forms':forms}
+
+    return render(request, 'BistroManagementToolApp/test_env.html', context=my_dict)

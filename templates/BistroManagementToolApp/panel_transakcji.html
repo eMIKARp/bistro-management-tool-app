@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 
 <!-- TODO dodać możliwość edytowania transakcji po ich zaakceptowaniu -->
+<!-- TODO dodać możliwość wylistowania już zapisanych transakcji -->
+<!-- TODO wprowadzić mechanizm ograniczający liczbę pobranych transakcji do transakcji z dnia dzisiejszego -->
+<!-- TODO wprowadzić zapisywanie transakcji przy użyciu AJAXa -->
+
 
 {% extends "BistroManagementToolApp/base.html" %}
 
@@ -16,6 +20,7 @@
 {% endblock %}
 
 {% block body_block %}
+
     <div class="transaction_window">
         <div class="transction_window_header">
             <div id="header_buttons" class="header_item"></div>
@@ -25,14 +30,22 @@
             <div id="header_total" class="header_item"><strong>Wartość</strong></div>
         </div>
         <div class="transction_window_main disable-scrollbars">
-
+            <form id="transaction_form" action="{% url 'BistroManagementToolApp:panel_transakcji' %}" method="POST" style="display: none;flex-direction: column">
+                {% csrf_token %}
+                {{ form_set.management_form }}
+                <div id="form_set">
+                </div>
+                <input id='submit_button' type="submit" value="submit">
+                <div id="empty_form" style="display: none">{{ form_set.empty_form.product }}{{ form_set.empty_form.quantity }}</div>
+            </form>
         </div>
         <div class="transaction_window_summary">
             <div id="summary_label" class="summary_item">Razem:</div>
             <div id="summary_amount" class="summary_item">0.0 PLN</div>
         </div>
     </div>
-    <div class="transaction_offer">
+
+    <div id="transaction_offer" class="transaction_offer_visible">
         <div class="product_groups disable-scrollbars">
             {% if product_groups %}
                 {% for group in product_groups %}
@@ -52,11 +65,36 @@
             {% endif %}
         </div>
         <div id="twf_two" class="transction_window_footer">
-            <button id="fi_anuluj" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Anuluj</strong></button>
-            <button id="fi_zakoncz" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'" ><strong>Zakończ</strong></button>
-        </div>
+            <button id="fi_zakończ" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Zakończ</strong></button>
+            <button id="fi_lista_transakcji" class="footer_item"><strong>Lista transakcji</strong></button>
+            <button id="fi_zapisz" class="footer_item"><strong>Zapisz</strong></button>
         </div>
     </div>
+
+    <div id="transaction_list" class="transaction_list_hidden">
+        <div class="transction_window_header">
+            <div id="header_buttons" class="header_item"></div>
+            <div id="header_nazwa" class="header_item"><strong>Nazwa</strong></div>
+            <div id="header_ilosc" class="header_item"><strong>Ilość</strong></div>
+            <div id="header_brutto" class="header_item"><strong>Brutto</strong></div>
+            <div id="header_total" class="header_item"><strong>Wartość</strong></div>
+        </div>
+        <div class="transaction_list_items disable-scrollbars">
+            {% if transactions %}
+                {% for trans in transactions %}
+                    <div>{{ trans.date_created }} {{ trans.number_of_products_in_transaction  }} {{ trans.brutto_transaction_value }}</div>
+                {% endfor %}
+            {% else %}
+                <p>Brak transakcji do wyświetlenia</p>
+            {% endif %}
+        </div>
+        <div id="twf_two" class="transction_window_footer">
+            <button id="fi_zakończ" class="footer_item" onclick ="location.href='{% url 'BistroManagementToolApp:panel_sprzedawcy' %}'"><strong>Zakończ</strong></button>
+            <button id="fi_lista_transakcji" class="footer_item"><strong>Lista transakcji</strong></button>
+            <button id="fi_zapisz" class="footer_item"><strong>Zapisz</strong></button>
+        </div>
+    </div>
+
 {% endblock %}
 
 {% block optional_javascript_block %}

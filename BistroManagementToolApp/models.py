@@ -2,6 +2,7 @@ from django.db import models
 from django.core import validators
 from decimal import Decimal
 from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 
@@ -78,19 +79,19 @@ class Product(models.Model):
     vat_rate = models.DecimalField(max_digits=10,decimal_places=2)
     name = models.CharField(max_length=255)
     ingredients = models.ManyToManyField(Ingredient,related_name='products',through='IngredientsInProduct')
-    monthly_potential = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    share_in_sales = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    brutto_price = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    netto_price = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    unit_cost = models.DecimalField(max_digits=10,decimal_places=6,default='0.00')
-    food_cost = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    unit_margin = models.DecimalField(max_digits=10,decimal_places=6,default='0.00')
-    product_margin = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    total_income = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    total_cost = models.DecimalField(max_digits=10,decimal_places=6,default='0.00')
-    total_profit = models.DecimalField(max_digits=10,decimal_places=6,default='0.00')
-    vat_paid = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    vat_due = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
+    monthly_potential = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    share_in_sales = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    brutto_price = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    netto_price = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    unit_cost = models.DecimalField(max_digits=10,decimal_places=6,default=0.00)
+    food_cost = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    unit_margin = models.DecimalField(max_digits=10,decimal_places=6,default=0.00)
+    product_margin = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    total_income = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    total_cost = models.DecimalField(max_digits=10,decimal_places=6,default=0.00)
+    total_profit = models.DecimalField(max_digits=10,decimal_places=6,default=0.00)
+    vat_paid = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    vat_due = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
 
     def __str__(self):
         return self.name
@@ -112,7 +113,7 @@ class ApplicationUser (models.Model):
 
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='additional_fields')
     picture = models.ImageField(upload_to='profile_pics',blank=True)
-    salary = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
+    salary = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
     work_scheadule = models.OneToOneField(WorkScheadule,blank=True,null=True,on_delete=models.SET_NULL)
 
     def __str__(self):
@@ -123,23 +124,23 @@ class Transaction(models.Model):
 
     PAYMENT_TYPE = [('CASH','CASH'),('CARD','CARD')]
 
-    date_created = models.DateTimeField(null=True)
-    sales_person = models.ForeignKey(ApplicationUser, on_delete=models.SET_NULL, related_name='transactions', null=True)
-    payment_type = models.CharField(max_length=4,choices=PAYMENT_TYPE,default='CARD')
-    netto_transaction_value = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    netto_transaction_value_5_VAT = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    netto_transaction_value_8_VAT = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    netto_transaction_value_23_VAT = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
-    brutto_transaction_value = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
+    date_created = models.DateTimeField(null=True,default=datetime.now)
+    sales_person = models.ForeignKey(ApplicationUser, on_delete=models.SET_NULL, related_name='transactions', null=True,blank=True)
+    payment_type = models.CharField(max_length=4,choices=PAYMENT_TYPE,default='CASH')
+    products_in_transaction = models.ManyToManyField(Product,through='ProductsInTransaction',null=True,blank=True)
+    number_of_products_in_transaction = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    netto_transaction_value = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    vat_due_in_transaction = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
+    brutto_transaction_value = models.DecimalField(max_digits=10,decimal_places=2,default=0.00)
 
     def __str__(self):
-        return "Transaction: " + str(self.date_created) + " amount: " + self.brutto_transaction_value
+        return "Transaction: " + str(self.date_created) + " amount: " + str(self.brutto_transaction_value)
 
 
 class ProductsInTransaction(models.Model):
-    product = models.ForeignKey(Product,on_delete=models.CASCADE, related_name='product_in_transaction',null=True)
-    transaction = models.ForeignKey(Transaction,on_delete=models.CASCADE, related_name='transaction',null=True)
-    quantity = models.DecimalField(max_digits=10,decimal_places=2,default='0.00')
+    product = models.ForeignKey(Product,on_delete=models.CASCADE, related_name='product_in_transaction',null=True,blank=True)
+    transaction = models.ForeignKey(Transaction,on_delete=models.CASCADE, related_name='transaction',null=True,blank=True)
+    quantity = models.DecimalField(max_digits=10,decimal_places=2,default=0.00,null=True,blank=True)
 
     def __str__(self):
-        return 'Quantity of: '+ self.product + ' in transaction: ' + self.transaction + ' is: ' + self.quantity
+        return 'Transaction: ' +str(self.product.date_created)+ ' - Product: '+ str(self.product) + ' - Quantity: ' + str(self.quantity)
