@@ -4,7 +4,7 @@
 <!-- TODO dodać możliwość wylistowania już zapisanych transakcji -->
 <!-- TODO wprowadzić mechanizm ograniczający liczbę pobranych transakcji do transakcji z dnia dzisiejszego -->
 <!-- TODO wprowadzić zapisywanie transakcji przy użyciu AJAXa -->
-
+<!-- TODO dodać możliwość wylistowania wszystkich transakcji w panelu administratora -->
 
 {% extends "BistroManagementToolApp/base.html" %}
 
@@ -73,16 +73,32 @@
 
     <div id="transaction_list" class="transaction_list_hidden">
         <div class="transction_window_header">
-            <div id="header_buttons" class="header_item"></div>
-            <div id="header_nazwa" class="header_item"><strong>Nazwa</strong></div>
-            <div id="header_ilosc" class="header_item"><strong>Ilość</strong></div>
-            <div id="header_brutto" class="header_item"><strong>Brutto</strong></div>
-            <div id="header_total" class="header_item"><strong>Wartość</strong></div>
+            <div id="header_sales_person" class="header_item"><strong>Sprzedawca</strong></div>
+            <div id="header_data" class="header_item"><strong>Data</strong></div>
+            <div id="header_godzina" class="header_item"><strong>Godzina</strong></div>
+            <div id="header_sztuki" class="header_item"><strong>Ilość</strong></div>
+            <div id="header_wartosc" class="header_item"><strong>Wartość</strong></div>
         </div>
         <div class="transaction_list_items disable-scrollbars">
             {% if transactions %}
                 {% for trans in transactions %}
-                    <div>{{ trans.date_created }} {{ trans.number_of_products_in_transaction  }} {{ trans.brutto_transaction_value }}</div>
+                    <div id="{{ trans.id }}" class="transaction_list_item">
+                        <p id="trans_sales_person">
+                            {{ trans.sales_person }}
+                        </p>
+                        <p id="trans_data">
+                            {{ trans.date_created.date }}
+                        </p>
+                        <p id="trans_godzina">
+                            {{ trans.date_created.time }}
+                        </p>
+                        <p id="trans_ilosc">
+                            {{ trans.number_of_products_in_transaction }} szt.
+                        </p>
+                        <p id="trans_wartosc">
+                            {{ trans.brutto_transaction_value }} PLN
+                        </p>
+                    </div>
                 {% endfor %}
             {% else %}
                 <p>Brak transakcji do wyświetlenia</p>

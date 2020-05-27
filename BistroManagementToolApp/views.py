@@ -123,7 +123,7 @@ def panel_transakcji(request):
                     f.save()
 
             products_in_transaction_formset = ProductsInTransactionFormset()
-            transactions = Transaction.objects.all()
+            transactions = Transaction.objects.order_by('-date_created').all()
             product_groups = ProductGroup.objects.all()
             product_items = Product.objects.all()
             my_dict = {'transactions': transactions, 'product_groups': product_groups, 'product_items': product_items,
@@ -138,7 +138,7 @@ def panel_transakcji(request):
             # poprzez słownik
 
         products_in_transaction_formset = ProductsInTransactionFormset()
-        transactions = Transaction.objects.all()
+        transactions = Transaction.objects.order_by('-date_created').all()
         product_groups = ProductGroup.objects.all()
         product_items = Product.objects.all()
         my_dict = {'transactions':transactions,'product_groups':product_groups,'product_items':product_items,'form_set':products_in_transaction_formset}
